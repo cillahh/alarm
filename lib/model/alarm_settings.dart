@@ -9,8 +9,8 @@ class AlarmSettings {
     required this.id,
     required this.dateTime,
     required this.assetAudioPath,
-    required this.notificationTitle,
-    required this.notificationBody,
+    this.notificationTitle,
+    this.notificationBody,
     this.loopAudio = true,
     this.vibrate = true,
     this.volume,
@@ -91,10 +91,10 @@ class AlarmSettings {
   final double fadeDuration;
 
   /// Title of the notification to be shown when alarm is triggered.
-  final String notificationTitle;
+  final String? notificationTitle;
 
   /// Body of the notification to be shown when alarm is triggered.
-  final String notificationBody;
+  final String? notificationBody;
 
   /// Whether to show a notification when application is killed by user.
   ///
