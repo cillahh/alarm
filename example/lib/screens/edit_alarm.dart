@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 class ExampleAlarmEditScreen extends StatefulWidget {
   const ExampleAlarmEditScreen({super.key, this.alarmSettings});
 
-  final AlarmSettings? alarmSettings;
+  final BISMAlarmSettings? alarmSettings;
 
   @override
   State<ExampleAlarmEditScreen> createState() => _ExampleAlarmEditScreenState();
@@ -84,12 +84,12 @@ class _ExampleAlarmEditScreenState extends State<ExampleAlarmEditScreen> {
     }
   }
 
-  AlarmSettings buildAlarmSettings() {
+  BISMAlarmSettings buildAlarmSettings() {
     final id = creating
         ? DateTime.now().millisecondsSinceEpoch % 10000
         : widget.alarmSettings!.id;
 
-    final alarmSettings = AlarmSettings(
+    final alarmSettings = BISMAlarmSettings(
       id: id,
       dateTime: selectedDateTime,
       loopAudio: loopAudio,

@@ -22,7 +22,7 @@ class Alarm {
   static bool get android => defaultTargetPlatform == TargetPlatform.android;
 
   /// Stream of the ringing status.
-  static final ringStream = StreamController<AlarmSettings>();
+  static final ringStream = StreamController<BISMAlarmSettings>();
 
   /// Initializes Alarm services.
   ///
@@ -63,7 +63,7 @@ class Alarm {
   ///
   /// If you set an alarm for the same dateTime as an existing one,
   /// the new alarm will replace the existing one.
-  static Future<bool> set({required AlarmSettings alarmSettings}) async {
+  static Future<bool> set({required BISMAlarmSettings alarmSettings}) async {
     alarmSettingsValidation(alarmSettings);
 
     for (final alarm in Alarm.getAlarms()) {
@@ -91,7 +91,7 @@ class Alarm {
   }
 
   /// Validates [alarmSettings] fields.
-  static void alarmSettingsValidation(AlarmSettings alarmSettings) {
+  static void alarmSettingsValidation(BISMAlarmSettings alarmSettings) {
     if (alarmSettings.id == 0 || alarmSettings.id == -1) {
       throw AlarmException(
         'Alarm id cannot be 0 or -1. Provided: ${alarmSettings.id}',
@@ -160,7 +160,7 @@ class Alarm {
   static bool hasAlarm() => AlarmStorage.hasAlarm();
 
   /// Returns alarm by given id. Returns null if not found.
-  static AlarmSettings? getAlarm(int id) {
+  static BISMAlarmSettings? getAlarm(int id) {
     final alarms = AlarmStorage.getSavedAlarms();
 
     for (final alarm in alarms) {
@@ -172,5 +172,5 @@ class Alarm {
   }
 
   /// Returns all the alarms.
-  static List<AlarmSettings> getAlarms() => AlarmStorage.getSavedAlarms();
+  static List<BISMAlarmSettings> getAlarms() => AlarmStorage.getSavedAlarms();
 }

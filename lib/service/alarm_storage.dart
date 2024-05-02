@@ -30,7 +30,7 @@ class AlarmStorage {
 
   /// Saves alarm info in local storage so we can restore it later
   /// in the case app is terminated.
-  static Future<void> saveAlarm(AlarmSettings alarmSettings) => prefs.setString(
+  static Future<void> saveAlarm(BISMAlarmSettings alarmSettings) => prefs.setString(
         '$prefix${alarmSettings.id}',
         json.encode(alarmSettings.toJson()),
       );
@@ -51,15 +51,15 @@ class AlarmStorage {
 
   /// Returns all alarms info from local storage in the case app is terminated
   /// and we need to restore previously scheduled alarms.
-  static List<AlarmSettings> getSavedAlarms() {
-    final alarms = <AlarmSettings>[];
+  static List<BISMAlarmSettings> getSavedAlarms() {
+    final alarms = <BISMAlarmSettings>[];
     final keys = prefs.getKeys();
 
     for (final key in keys) {
       if (key.startsWith(prefix)) {
         final res = prefs.getString(key);
         alarms.add(
-          AlarmSettings.fromJson(json.decode(res!) as Map<String, dynamic>),
+          BISMAlarmSettings.fromJson(json.decode(res!) as Map<String, dynamic>),
         );
       }
     }

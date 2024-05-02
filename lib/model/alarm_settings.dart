@@ -1,11 +1,11 @@
 import 'package:flutter/widgets.dart';
 
-/// [AlarmSettings] is a model that contains all the settings to customize
+/// [BISMAlarmSettings] is a model that contains all the settings to customize
 /// and set an alarm.
 @immutable
-class AlarmSettings {
+class BISMAlarmSettings {
   /// Model that contains all the settings to customize and set an alarm.
-  const AlarmSettings({
+  const BISMAlarmSettings({
     required this.id,
     required this.dateTime,
     required this.assetAudioPath,
@@ -20,7 +20,7 @@ class AlarmSettings {
   });
 
   /// Constructs an `AlarmSettings` instance from the given JSON data.
-  factory AlarmSettings.fromJson(Map<String, dynamic> json) => AlarmSettings(
+  factory BISMAlarmSettings.fromJson(Map<String, dynamic> json) => BISMAlarmSettings(
         id: json['id'] as int,
         dateTime: DateTime.fromMicrosecondsSinceEpoch(json['dateTime'] as int),
         assetAudioPath: json['assetAudioPath'] as String,
@@ -138,7 +138,7 @@ class AlarmSettings {
 
   /// Creates a copy of `AlarmSettings` but with the given fields replaced with
   /// the new values.
-  AlarmSettings copyWith({
+  BISMAlarmSettings copyWith({
     int? id,
     DateTime? dateTime,
     String? assetAudioPath,
@@ -151,7 +151,7 @@ class AlarmSettings {
     bool? enableNotificationOnKill,
     bool? androidFullScreenIntent,
   }) {
-    return AlarmSettings(
+    return BISMAlarmSettings(
       id: id ?? this.id,
       dateTime: dateTime ?? this.dateTime,
       assetAudioPath: assetAudioPath ?? this.assetAudioPath,
@@ -197,7 +197,7 @@ class AlarmSettings {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is AlarmSettings &&
+      other is BISMAlarmSettings &&
           runtimeType == other.runtimeType &&
           id == other.id &&
           dateTime == other.dateTime &&

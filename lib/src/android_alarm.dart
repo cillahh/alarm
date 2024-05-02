@@ -40,7 +40,7 @@ class AndroidAlarm {
 
   /// Schedules a native alarm with given [settings] with its notification.
   static Future<bool> set(
-    AlarmSettings settings,
+    BISMAlarmSettings settings,
     void Function()? onRing,
   ) async {
     try {

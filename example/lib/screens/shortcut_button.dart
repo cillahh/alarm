@@ -32,7 +32,7 @@ class _ExampleAlarmHomeShortcutButtonState
 
     setState(() => showMenu = false);
 
-    final alarmSettings = AlarmSettings(
+    final alarmSettings = BISMAlarmSettings(
       id: DateTime.now().millisecondsSinceEpoch % 10000,
       dateTime: dateTime,
       assetAudioPath: 'assets/marimba.mp3',

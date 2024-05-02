@@ -23,7 +23,7 @@ class IOSAlarm {
   /// Also set periodic timer and listens for app state changes to trigger
   /// the alarm ring callback at the right time.
   static Future<bool> setAlarm(
-    AlarmSettings settings,
+    BISMAlarmSettings settings,
     void Function()? onRing,
   ) async {
     final id = settings.id;
