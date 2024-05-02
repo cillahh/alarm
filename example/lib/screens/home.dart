@@ -17,9 +17,9 @@ class ExampleAlarmHomeScreen extends StatefulWidget {
 }
 
 class _ExampleAlarmHomeScreenState extends State<ExampleAlarmHomeScreen> {
-  late List<AlarmSettings> alarms;
+  late List<BISMAlarmSettings> alarms;
 
-  static StreamSubscription<AlarmSettings>? subscription;
+  static StreamSubscription<BISMAlarmSettings>? subscription;
 
   @override
   void initState() {
@@ -39,7 +39,7 @@ class _ExampleAlarmHomeScreenState extends State<ExampleAlarmHomeScreen> {
     });
   }
 
-  Future<void> navigateToRingScreen(AlarmSettings alarmSettings) async {
+  Future<void> navigateToRingScreen(BISMAlarmSettings alarmSettings) async {
     await Navigator.push(
       context,
       MaterialPageRoute<void>(
@@ -50,7 +50,7 @@ class _ExampleAlarmHomeScreenState extends State<ExampleAlarmHomeScreen> {
     loadAlarms();
   }
 
-  Future<void> navigateToAlarmScreen(AlarmSettings? settings) async {
+  Future<void> navigateToAlarmScreen(BISMAlarmSettings? settings) async {
     final res = await showModalBottomSheet<bool?>(
       context: context,
       isScrollControlled: true,

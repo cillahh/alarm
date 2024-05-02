@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 class ExampleAlarmRingScreen extends StatelessWidget {
   const ExampleAlarmRingScreen({required this.alarmSettings, super.key});
 
-  final AlarmSettings alarmSettings;
+  final BISMAlarmSettings alarmSettings;
 
   @override
   Widget build(BuildContext context) {
