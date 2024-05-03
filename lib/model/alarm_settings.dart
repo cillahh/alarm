@@ -9,8 +9,8 @@ class BISMAlarmSettings {
     required this.id,
     required this.dateTime,
     required this.assetAudioPath,
-    this.notificationTitle,
-    this.notificationBody,
+    //this.notificationTitle,
+    //this.notificationBody,
     this.loopAudio = true,
     this.vibrate = true,
     this.volume,
@@ -28,8 +28,8 @@ class BISMAlarmSettings {
         vibrate: json['vibrate'] as bool? ?? true,
         volume: json['volume'] as double?,
         fadeDuration: json['fadeDuration'] as double,
-        notificationTitle: json['notificationTitle'] as String? ?? '',
-        notificationBody: json['notificationBody'] as String? ?? '',
+        //notificationTitle: json['notificationTitle'] as String? ?? '',
+        //notificationBody: json['notificationBody'] as String? ?? '',
         enableNotificationOnKill:
             json['enableNotificationOnKill'] as bool? ?? true,
         androidFullScreenIntent:
@@ -91,10 +91,10 @@ class BISMAlarmSettings {
   final double fadeDuration;
 
   /// Title of the notification to be shown when alarm is triggered.
-  final String? notificationTitle;
+  //final String? notificationTitle;
 
   /// Body of the notification to be shown when alarm is triggered.
-  final String? notificationBody;
+  //final String? notificationBody;
 
   /// Whether to show a notification when application is killed by user.
   ///
@@ -128,8 +128,8 @@ class BISMAlarmSettings {
     hash = hash ^ vibrate.hashCode;
     hash = hash ^ volume.hashCode;
     hash = hash ^ fadeDuration.hashCode;
-    hash = hash ^ (notificationTitle.hashCode);
-    hash = hash ^ (notificationBody.hashCode);
+    //hash = hash ^ (notificationTitle.hashCode);
+    //hash = hash ^ (notificationBody.hashCode);
     hash = hash ^ enableNotificationOnKill.hashCode;
     hash = hash & 0x3fffffff;
 
@@ -146,8 +146,8 @@ class BISMAlarmSettings {
     bool? vibrate,
     double? volume,
     double? fadeDuration,
-    String? notificationTitle,
-    String? notificationBody,
+    //String? notificationTitle,
+    //String? notificationBody,
     bool? enableNotificationOnKill,
     bool? androidFullScreenIntent,
   }) {
@@ -159,8 +159,8 @@ class BISMAlarmSettings {
       vibrate: vibrate ?? this.vibrate,
       volume: volume ?? this.volume,
       fadeDuration: fadeDuration ?? this.fadeDuration,
-      notificationTitle: notificationTitle ?? this.notificationTitle,
-      notificationBody: notificationBody ?? this.notificationBody,
+      //notificationTitle: notificationTitle ?? this.notificationTitle,
+      //notificationBody: notificationBody ?? this.notificationBody,
       enableNotificationOnKill:
           enableNotificationOnKill ?? this.enableNotificationOnKill,
       androidFullScreenIntent:
@@ -177,8 +177,8 @@ class BISMAlarmSettings {
         'vibrate': vibrate,
         'volume': volume,
         'fadeDuration': fadeDuration,
-        'notificationTitle': notificationTitle,
-        'notificationBody': notificationBody,
+        //'notificationTitle': notificationTitle,
+        //'notificationBody': notificationBody,
         'enableNotificationOnKill': enableNotificationOnKill,
         'androidFullScreenIntent': androidFullScreenIntent,
       };
@@ -206,8 +206,8 @@ class BISMAlarmSettings {
           vibrate == other.vibrate &&
           volume == other.volume &&
           fadeDuration == other.fadeDuration &&
-          notificationTitle == other.notificationTitle &&
-          notificationBody == other.notificationBody &&
+          //notificationTitle == other.notificationTitle &&
+          //notificationBody == other.notificationBody &&
           enableNotificationOnKill == other.enableNotificationOnKill &&
           androidFullScreenIntent == other.androidFullScreenIntent;
 }
