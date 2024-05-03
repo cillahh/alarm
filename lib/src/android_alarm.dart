@@ -56,8 +56,8 @@ class AndroidAlarm {
           'vibrate': settings.vibrate,
           'volume': settings.volume,
           'fadeDuration': settings.fadeDuration,
-          //'notificationTitle': settings.notificationTitle,
-          //'notificationBody': settings.notificationBody,
+          'notificationTitle': settings.notificationTitle,
+          'notificationBody': settings.notificationBody,
           'fullScreenIntent': settings.androidFullScreenIntent,
         },
       );
